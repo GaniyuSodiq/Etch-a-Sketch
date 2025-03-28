@@ -36,7 +36,8 @@ function makeGrid(size) {
       let row = document.createElement("div");
       row.addEventListener("mouseover", () => {
         let randomColor = 
-        `rgb(${Math.floor(Math.random()*255)}, ${Math.floor(Math.random()*255)}, ${Math.floor(Math.random()*255)})`;
+        `rgba(${Math.floor(Math.random()*255)}, ${Math.floor(Math.random()*255)}, ${Math.floor(Math.random()*255)}, ${Math.floor(Math.random()*10) / 10})`;
+        console.log(randomColor);
         row.style.backgroundColor = randomColor;
       })
       row.classList.add("row");
@@ -51,6 +52,16 @@ function makeGrid(size) {
 gridRequestBtn.addEventListener("click", () => {
   let userGivenSize = prompt(`Type a number between 1-100 for a Grid layout`, "");
   makeGrid(userGivenSize);
+  // if (!Number.isInteger(userGivenSize)) {
+  //   alert("ERROR: You must give a number between 1 and 100");
+  // } else {
+  //   makeGrid(userGivenSize);
+  // }
+
+  // if (typeof userGivenSize === Number){
+  //   makeGrid(userGivenSize);
+  // } else {alert("ERROR: You must give a number between 1 and 100");
+  // };
 })
 
 
